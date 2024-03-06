@@ -4,7 +4,7 @@
     <x:Property Name="EndDate" Type="OutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>788.8,610.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>485.6,444.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -88,6 +88,8 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="GetConfig" sap:VirtualizedContainerService.HintSize="496,380" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -116,12 +118,12 @@
     <Assign DisplayName="Assign StartDate" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">StartDate</CSharpReference>
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">StartDate</CSharpReference>
         </OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30" xml:space="preserve">string.Join("/",  new string[] { DateTable.Rows[0][1].ToString().Split(new char[] { '/' })[1], DateTable.Rows[0][1].ToString().Split(new char[] { '/' })[0], DateTable.Rows[0][1].ToString().Split(new char[] { '/' })[2] })</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">DateTime.Parse(DateTable.Rows[0][1].ToString()).ToString("dd/MM/yyyy")</CSharpValue>
         </InArgument>
       </Assign.Value>
     </Assign>
@@ -133,7 +135,7 @@
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31" xml:space="preserve">string.Join("/",  new string[] { DateTable.Rows[1][1].ToString().Split(new char[] { '/' })[1], DateTable.Rows[1][1].ToString().Split(new char[] { '/' })[0], DateTable.Rows[1][1].ToString().Split(new char[] { '/' })[2] })</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">DateTime.Parse(DateTable.Rows[1][1].ToString()).ToString("dd/MM/yyyy")</CSharpValue>
         </InArgument>
       </Assign.Value>
     </Assign>
